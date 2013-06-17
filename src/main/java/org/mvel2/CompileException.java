@@ -167,6 +167,11 @@ public class CompileException extends RuntimeException {
       lastCr = cs.lastIndexOf('\n');
 
       if (firstCr == -1) break;
+      
+      if(firstCr == 0) {
+    	  cs = cs.substring(1, cs.length());
+    	  continue;
+      }
 
       int matchIndex = match == null ? 0 : cs.indexOf(match);
 
